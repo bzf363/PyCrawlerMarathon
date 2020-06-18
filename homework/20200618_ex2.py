@@ -9,7 +9,7 @@ Created on Wed Jun 17 21:10:47 2020
 
 #File I/O
 
-osfile= open ('/Users/chenshihti/Desktop/example.csv','r') #將檔案打開，無法看具體內容
+osfile= open ('/Users/chenshihti/Desktop/example＿ex2.csv','r') #將檔案打開，無法看具體內容
 content=osfile.read() # .read() 才能看到檔案實際資料
 #print(content)
 osfile.close()
