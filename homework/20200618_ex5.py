@@ -23,9 +23,10 @@ print()
 print(response[0].keys())
 print()
 
-#2. 取出每一筆資料的「標題」、「貼文時間」、「留言人數」、「按讚人數
+#2. 取出每一筆資料的「標題」、「貼文時間」、「留言人數」、「按讚人數」
+#respone為list 所以可以for i in list
 for i in response:
-    print(i['title'],i['updatedAt'],i['commentCount'],i['likeCount'])
+    print(i['title'],i['createdAt'],i['commentCount'],i['likeCount'])
     print()
     
 #3. 計算熱門/非熱門文章的「平均留言人數」與「平均按讚人數」
