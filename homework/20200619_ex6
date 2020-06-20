@@ -20,7 +20,13 @@ data=json.loads(r.text)
 
 #1. 取出知乎問題發問時間
 
-print (data['data'][0]['created_time'])
+qtime=data['data'][0]['question']['created']
+
+#轉成顯示時間
+from datetime import datetime
+
+print( datetime.fromtimestamp(qtime))
+
     
 #2. 取出第一筆與最後一筆回答的時間
 

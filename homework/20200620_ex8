@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jun 20 15:00:06 2020
+
+@author: chenshihti
+"""
+import requests 
+
+r1= requests.get('https://www.dcard.tw/f') 
+
+#3. 觀察一下知乎回來的資料好像有點怪怪的，該怎麼解決？ 加入headers通常只要家user-agent即可
+
+h2={'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'}
+
+r2= requests.get('https://www.zhihu.com/explore',headers=h2)
+
+r1_html=r1.text #find out the html
+r2_html=r2.text
+
+print (r2_html[0:600])
+
+
+#1. Request 取回之後該怎麼取出資料，資料型態是什麼？
+
+print("r1:",type(r1_html))
+print("r2:",type(r2_html))
+
+#print(r1_html)
+
+
+from bs4 import BeautifulSoup
+
+#2. 為什麼要使用 BeatifulSoup 處理？
+
+soup1 = BeautifulSoup(r1_html,features="lxml")
+soup2 = BeautifulSoup(r2_html,features="lxml")
+
+#print (soup2)
+print('soup1:',type(soup1))
+print('soup2:',type(soup2))
+
+
