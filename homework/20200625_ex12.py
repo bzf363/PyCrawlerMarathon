@@ -21,7 +21,7 @@ soup = BeautifulSoup(r.text,'lxml')
 
 #print (soup)
 
-soup1=soup.select('.part_list_2') # select只能選一個 全部內容
+soup1=soup.select('.part_list_2') # select只能選一個 全部內容 不能印text
 
 #取出今天所有的發文
        
